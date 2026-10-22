@@ -1,16 +1,40 @@
-# React + Vite
+<div align="center">
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<!-- ANIMASI SVG HEADER (Gelombang Neon) -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0D0D0D&height=200&section=header&text=Ibrahim%20Portfolio&fontSize=50&fontColor=D4FF3F&animation=twinkling" width="100%" />
 
-Currently, two official plugins are available:
+<!-- ANIMASI TEKS NGETIK -->
+<a href="https://ibrahim-fqt.vercel.app">
+  <img src="https://readme-typing-svg.demolab.com?font=Bricolage+Grotesque&weight=600&size=24&pause=1000&color=D4FF3F&center=true&vCenter=true&width=600&lines=Think.+Prompt.+Build.;Student+%C3%97+Maker+%C3%97+Learner;Exploring+AI+%26+Creative+Tech;Welcome+to+my+mind." alt="Typing SVG" />
+</a>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+<br/>
 
-## React Compiler
+<!-- BADGE NYALA -->
+[![Live Demo](https://img.shields.io/badge/LIVE_DEMO-ibrahim--fqt.vercel.app-D4FF3F?style=for-the-badge&logo=vercel&logoColor=black)](https://ibrahim-fqt.vercel.app)
+[![React](https://img.shields.io/badge/React_18-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS_v4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)](https://vitejs.dev/)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+</div>
 
-## Expanding the ESLint configuration
+<br/>
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+> **"I'm not just building websites. I'm building how I think."**
+
+---
+
+### 💻 `~/ibrahim/portfolio-v1` (Terminal)
+```bash
+$ whoami
+> Ibrahim (Student & Creative Developer)
+
+$ cat manifesto.txt
+> I explore the intersection of AI, business, and creative technology.
+> Every project is a lab experiment: something to build, break, and understand better.
+> I don't use AI to skip the thinking part. I use it to amplify it.
+
+$ ./run-portfolio.sh
+> [System] Booting up the matrix...
+> [Status] Live at https://ibrahim-fqt.vercel.app
+> [Vibe] Dark Mode, Aurora, and Neon Lime.
