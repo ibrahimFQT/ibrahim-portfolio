@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500&family=Sora:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #111111;
+  --color-bg-alt: #0D0D0D;
+  --color-bg-raise: #1A1A1A;
+  --color-text: #EDEAE4;
+  --color-muted: #8A8A8A;
+  --color-line: #262626;
+  --color-accent: #D4FF3F;
+
+  --font-display: "Bricolage Grotesque", sans-serif;
+  --font-ui: "Sora", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden; /* Cuma X yang hidden biar parallax aman */
+}
+
+/* ---------- CURSOR CUSTOM ---------- */
+@media (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+}
+
+/* ---------- GRID BACKGROUND ---------- */
+.grid-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, rgba(237, 234, 228, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(237, 234, 228, 0.04) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse at 50% 0%, black 40%, transparent 80%);
+}
+
+/* ---------- NOISE / GRAIN ---------- */
+.noise {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---------- SPOTLIGHT GLOBAL ---------- */
+.global-spotlight {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  background: radial-gradient(
+    600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(212, 255, 63, 0.04),
+    transparent 80%
+  );
+  transition: opacity 0.3s;
+}
+
+/* ---------- MARQUEE ---------- */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+.marquee-track.reverse {
+  animation-direction: reverse;
+}
+
+/* ---------- AURORA BACKGROUND (WARNA UNGU & LIME) ---------- */
+.aurora-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.aurora-blob {
+  position: absolute;
+  filter: blur(100px);
+  opacity: 0.15;
+  border-radius: 50%;
+  animation: float 10s infinite ease-in-out alternate;
+}
+
+.aurora-purple {
+  background: #8B5CF6;
+  width: 50vw;
+  height: 50vw;
+  top: -10%;
+  left: -10%;
+}
+
+.aurora-lime {
+  background: #D4FF3F;
+  width: 40vw;
+  height: 40vw;
+  bottom: -10%;
+  right: -10%;
+  animation-delay: -5s;
+}
+
+@keyframes float {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(10%, 10%) scale(1.1); }
+}
+
+/* ---------- AURORA BERDASARKAN WAKTU ---------- */
+.aurora-morning .aurora-purple { background: #FBBF24; }
+.aurora-morning .aurora-lime { background: #60A5FA; }
+.aurora-afternoon .aurora-purple { background: #F97316; }
+.aurora-afternoon .aurora-lime { background: #FCD34D; }
+.aurora-night .aurora-purple { background: #8B5CF6; }
+.aurora-night .aurora-lime { background: #D4FF3F; }
+
+/* ---------- CURSOR RADAR ANIMATION ---------- */
+@keyframes radar {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(3.5); opacity: 0; }
+}
+
+.animate-radar {
+  animation: radar 1.5s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+/* ---------- ANIMASI NAPAS (THANK YOU) ---------- */
+@keyframes slow-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.05); opacity: 1; }
+}
+
+.animate-slow-pulse {
+  animation: slow-pulse 4s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* ---------- HORIZONTAL SCROLL SECTION ---------- */
+@media (max-width: 768px) {
+  section[aria-label="How I work"] {
+    height: auto !important;
+  }
+  section[aria-label="How I work"] > div {
+    position: static !important;
+    height: auto !important;
+    display: block !important;
+    padding: 96px 24px;
+  }
+  section[aria-label="How I work"] > div > div {
+    flex-direction: column;
+    transform: none !important;
+  }
+  section[aria-label="How I work"] article {
+    width: 100% !important;
+    height: auto !important;
+  }
+}
+
+/* ---------- REDUCED MOTION ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+  html { scroll-behavior: auto; }
+}
