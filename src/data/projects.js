@@ -4,7 +4,7 @@ export const projects = [
     title: "AI Prompt Lab",
     category: "AI / Experiment",
     year: "2026",
-    href: "#", // TODO: isi link repo/dokumen besok
+    href: "https://mutabaah-adz.vercel.app/", 
     status: "coming soon",
   },
   {
