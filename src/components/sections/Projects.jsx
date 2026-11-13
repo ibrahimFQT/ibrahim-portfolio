@@ -4,7 +4,7 @@ import ProjectRow from "../ui/ProjectRow";
 import PreviewCard from "../ui/PreviewCard";
 import { projects } from "../../data/projects";
 
-export default function Projects() {
+export default function Projects({ onComingSoon }) {
   const [hovered, setHovered] = useState(null);
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
 
@@ -20,6 +20,7 @@ export default function Projects() {
               setMouse({ x: e.clientX, y: e.clientY });
             }}
             onLeave={() => setHovered(null)}
+            onComingSoon={onComingSoon} // Oper fungsi ke ProjectRow
           />
         ))}
       </div>
